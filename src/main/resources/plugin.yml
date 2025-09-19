@@ -1,0 +1,48 @@
+name: LobbyPlus
+main: com.mundocode.lobbyplus.LobbyPlus
+version: 1.5.6
+api-version: "1.20"
+author: Juanppdev
+commands:
+  lobbyhelp:
+    description: Muestra la ayuda de LobbyPlus.
+    usage: /lobbyhelp
+    permission: lobbyplus.help
+  setspawn:
+    description: Establece el spawn de un lobby (por defecto 'default').
+    usage: /setspawn [nombreLobby]
+    permission: lobbyplus.setspawn
+    aliases: [setspwan]
+  spawn:
+    description: Te teletransporta al spawn del lobby indicado (o default).
+    usage: /spawn [nombreLobby]
+    permission: lobbyplus.spawn
+  lobby:
+    description: Administra lobbies (set, delete, list, reload, openmenu).
+    usage: /lobby <set|delete|list|reload|openmenu> [args]
+    permission: lobbyplus.admin
+permissions:
+  lobbyplus.*:
+    description: Todos los permisos de LobbyPlus.
+    children:
+      lobbyplus.help: true
+      lobbyplus.setspawn: true
+      lobbyplus.spawn: true
+      lobbyplus.admin: true
+  lobbyplus.help: { default: true }
+  lobbyplus.spawn: { default: true }
+  lobbyplus.setspawn: { default: op }
+  lobbyplus.admin: { default: op }
+
+  # Compat con setups antiguos (lobbycore.*)
+  lobbycore.*:
+    description: Compatibilidad con antiguos permisos LobbyCore.
+    children:
+      lobbycore.help: true
+      lobbycore.setspawn: true
+      lobbycore.spawn: true
+      lobbycore.admin: true
+  lobbycore.help: { default: true }
+  lobbycore.spawn: { default: true }
+  lobbycore.setspawn: { default: op }
+  lobbycore.admin: { default: op }

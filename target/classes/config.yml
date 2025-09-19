@@ -1,0 +1,63 @@
+messages:
+  prefix: "&8[&bLobby&fPlus&8]&r "
+  noPermission: "&cNo tienes permiso para hacer eso."
+  lobbySet: "&aSpawn del lobby '&e%lobby%&a' guardado en &e%world%&a (&e%x%&a, &e%y%&a, &e%z%&a)."
+  lobbyDeleted: "&aLobby '&e%lobby%&a' eliminado."
+  lobbyNotFound: "&cEl lobby '&e%lobby%&c' no existe."
+  teleported: "&aTeletransportado a '&e%lobby%&a'."
+  reloaded: "&aConfiguración recargada."
+  invalidArgs: "&cUso: %usage%"
+  onlyPlayers: "&cEste comando solo puede usarse en el juego."
+  listHeader: "&7Lobbies: &f%list%"
+  joinItemGiven: "&7Se te ha entregado el menú del lobby."
+
+join:
+  giveItem: true
+  itemSlot: 4
+  item:
+    material: NETHER_STAR
+    name: "&bSelector de Lobbies"
+    lore:
+      - "&7Click derecho para abrir el menú"
+  teleportToDefault: false
+
+menu:
+  title: "&8Selecciona un destino"
+  size: 27
+  soundOnOpen: "UI_BUTTON_CLICK"
+  closeOnClick: true
+  items:
+    - slot: 10
+      material: COMPASS
+      name: "&aMain Lobby"
+      lore: ["&7Ir al lobby principal"]
+      action: WARP
+      value: mainlobby
+    - slot: 12
+      material: AMETHYST_SHARD
+      name: "&dOneBlock"
+      lore: ["&7Ir a OneBlock"]
+      action: WARP
+      value: oneblock
+    - slot: 14
+      material: IRON_SWORD
+      name: "&6Survival"
+      lore: ["&7Ir a Survival"]
+      action: WARP
+      value: survival
+    - slot: 16
+      material: GRASS_BLOCK
+      name: "&bSkyBlock"
+      lore: ["&7Ir a SkyBlock"]
+      action: WARP
+      value: skyblock
+
+broadcasts:
+  enabled: true
+  intervalTicks: 6000
+  messages:
+    - "&a&l¿Sabías? &7Usa &b/menu &7para abrir el selector de lobbies."
+    - "&e&lTienda: &7Visita &b/tienda &7para apoyar el servidor."
+    - "&b&lDiscord: &7Únete a nuestro Discord para eventos."
+
+debug: false
